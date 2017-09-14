@@ -1,0 +1,87 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<time.h>
+
+int count_s();
+void over();
+
+void main()
+{
+	int i;
+	printf("\n\t\t\t || 欢迎进入小学四则运算系统 ||\n");
+	printf("\n\t\t\t1  开始做题\n");
+	printf("\n\t\t\t2  退出\n");
+	printf("\n\t请输入您的选择: \n");
+	scanf("%d",&i);
+	if(i==1){
+		count_s();
+	}
+	else if(i==2)
+	{
+		over();
+	}else{
+		printf("\n\t输入错误，请重新输入：d%",i);
+		return;
+	}
+}
+
+void over()
+{
+	printf("\n\t\t欢迎再次使用，谢谢！");
+}
+
+int count_s()
+{
+	int i=0;
+     int n=0;
+     int x=0;
+     int t;
+     char a;
+     int b, c;
+     float result;
+     printf("/******请输入要出的题目数量:\n");
+     scanf("%d",&n);
+	 srand((unsigned) time(NULL)); 
+     while(x<n)
+     {
+    		a = rand() % 4;
+     		b = rand() % 100;
+     		c = rand() % 100;
+         switch(t)
+         {
+         case 0:
+             printf("%d + %d = ?\n", b, c);
+             break;
+         case 1:
+             printf("%d - %d = ?\n", b, c);
+             break;
+         case 2:
+             printf("%d * %d = ?\n", b, c);
+             break;
+         case 3:
+             printf("%d / %d = ?\n", b, c);
+             break;
+         }
+ 
+         i++;
+         while(i>=n)
+         {
+             printf("\n\t一共 %d 题\n",i); 
+             printf("\n\t\t继续?[Y/N]\n");
+             fflush(stdin);
+             scanf("%c",&a);
+             if(a=='Y'||a=='y')
+             {
+                 printf("/*****请输入要出的题目数量\n");
+                 scanf("%d",&n);
+                 i=0;
+                 break;
+              }
+             printf("欢迎再次使用使用！\n");
+             fflush(stdin);
+             getchar();
+             return 0;
+         }
+     }
+}
